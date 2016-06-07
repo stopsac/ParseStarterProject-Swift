@@ -15,6 +15,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        Parse.initializeWithConfiguration(ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+            configuration.server="https://blooming-badlands-46968.herokuapp.com/parse"
+            configuration.applicationId="APP_ID"
+            configuration.clientKey="MASTER_KEY"
+        }))
     }
 
     override func didReceiveMemoryWarning() {
